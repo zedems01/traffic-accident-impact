@@ -16,4 +16,10 @@ tqdm
 typer
 fastparquet
 pyarrow
+nltk
+gensim
+catboost
+xgboost
+lightgbm
+pickle
 -e .
