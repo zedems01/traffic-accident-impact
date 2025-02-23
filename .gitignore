@@ -1,6 +1,7 @@
 # Data
 /data/
 /draft-folder/
+/traffic_accident_impact/modeling/catboost_info/
 # Mac OS-specific storage files
 .DS_Store
 

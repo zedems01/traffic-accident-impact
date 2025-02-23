@@ -143,9 +143,9 @@ app = typer.Typer()
 
 @app.command(help="Preprocess the Description column using Doc2Vec")
 def transformTextData(
-    parquet_file_path: Path=typer.Argument(PROCESSED_DATA_DIR / "emr-spark-job" / "part-00000-1e8dbbd6-6f6f-4c21-9a0d-4f0752bb4ca0-c000.snappy.parquet",
+    parquet_file_path: Path=typer.Option(PROCESSED_DATA_DIR / "emr-spark-job" / "part-00000-1e8dbbd6-6f6f-4c21-9a0d-4f0752bb4ca0-c000.snappy.parquet",
                                            help="Path to the parquet file from the spark job"),
-    output_file_path: Path=typer.Argument(PROCESSED_DATA_DIR / "final" / "final_data.parquet",
+    output_file_path: Path=typer.Option(PROCESSED_DATA_DIR / "final" / "text_processed_data.parquet",
                                           help="Path to save the output file")
 ) -> None:
     
