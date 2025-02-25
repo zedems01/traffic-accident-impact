@@ -1,0 +1,62 @@
+2025-02-22 16:32:57.695 | INFO     | __main__:transform_save:145 - Loading data...
+2025-02-22 16:33:01.977 | SUCCESS  | __main__:transform_save:147 - Data loaded !!!
+2025-02-22 16:33:01.978 | INFO     | __main__:transform_save:149 - Transforming data...
+2025-02-22 16:34:37.086 | INFO     | __main__:transform_save:145 - Loading data...
+2025-02-22 16:34:41.433 | SUCCESS  | __main__:transform_save:147 - Data loaded !!!
+2025-02-22 16:34:41.433 | INFO     | __main__:transform_save:149 - Transforming data...
+2025-02-22 16:34:42.137 | SUCCESS  | __main__:cyclic_encoding:30 - Longitude cyclic encoding done !!!
+2025-02-22 16:37:16.240 | INFO     | __main__:transform_save:146 - Loading data...
+2025-02-22 16:37:21.186 | SUCCESS  | __main__:transform_save:148 - Data loaded !!!
+2025-02-22 16:37:21.186 | INFO     | __main__:transform_save:150 - Transforming data...
+2025-02-22 16:37:21.947 | SUCCESS  | __main__:cyclic_encoding:31 - Longitude cyclic encoding done !!!
+2025-02-22 16:37:22.698 | SUCCESS  | __main__:cyclic_encoding:35 - Hour cyclic encoding done !!!
+2025-02-22 16:37:23.423 | SUCCESS  | __main__:cyclic_encoding:39 - Day cyclic encoding done !!!
+2025-02-22 16:37:24.122 | SUCCESS  | __main__:cyclic_encoding:43 - Month cyclic encoding done !!!
+2025-02-22 16:37:24.764 | SUCCESS  | __main__:cyclic_encoding:69 - Wind direction cyclic encoding done !!!
+2025-02-22 16:37:25.811 | SUCCESS  | __main__:grouping_states:91 - State grouping done !!!
+2025-02-22 16:37:26.389 | SUCCESS  | __main__:grouping_weathers:133 - Weather grouping done !!!
+2025-02-22 16:37:26.390 | INFO     | __main__:transform_save:155 - Final dataset shape ----> || Lines: 4185414 || Features: 27
+2025-02-22 16:37:29.695 | INFO     | __main__:transform_save:158 - Data saved to ----> C:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\data\processed\final\final_processed_data.parquet
+2025-02-22 16:37:29.696 | SUCCESS  | __main__:transform_save:160 - Feature engineering done !!!
+2025-02-22 16:38:27.086 | INFO     | __main__:transform_save:146 - Loading data...
+2025-02-22 16:38:31.643 | SUCCESS  | __main__:transform_save:148 - Data loaded !!!
+2025-02-22 16:38:31.644 | INFO     | __main__:transform_save:150 - Transforming data...
+2025-02-22 16:38:32.409 | SUCCESS  | __main__:cyclic_encoding:31 - Longitude cyclic encoding done !!!
+2025-02-22 16:38:33.157 | SUCCESS  | __main__:cyclic_encoding:35 - Hour cyclic encoding done !!!
+2025-02-22 16:38:33.891 | SUCCESS  | __main__:cyclic_encoding:39 - Day cyclic encoding done !!!
+2025-02-22 16:38:34.622 | SUCCESS  | __main__:cyclic_encoding:43 - Month cyclic encoding done !!!
+2025-02-22 16:38:35.279 | SUCCESS  | __main__:cyclic_encoding:69 - Wind direction cyclic encoding done !!!
+2025-02-22 16:38:36.448 | SUCCESS  | __main__:grouping_states:91 - State grouping done !!!
+2025-02-22 16:38:37.080 | SUCCESS  | __main__:grouping_weathers:133 - Weather grouping done !!!
+2025-02-22 16:38:37.081 | INFO     | __main__:transform_save:155 - Final dataset shape ----> || Lines: 4185414 || Features: 27
+2025-02-22 16:38:37.081 | INFO     | __main__:transform_save:156 - List of features ----> ['severity', 'start_lat', 'distance(mi)', 'timezone', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'sunrise_sunset', 'accident_duration(min)', 'start_year', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle', 'state_group', 'weather_group']
+2025-02-22 16:38:40.550 | INFO     | __main__:transform_save:159 - Data saved to ----> C:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\data\processed\final\final_processed_data.parquet
+2025-02-22 16:38:40.550 | SUCCESS  | __main__:transform_save:161 - Feature engineering done !!!
+2025-02-22 16:40:53.827 | INFO     | __main__:transform_save:146 - Loading data...
+2025-02-22 16:40:58.131 | SUCCESS  | __main__:transform_save:148 - Data loaded !!!
+2025-02-22 16:40:58.132 | INFO     | __main__:transform_save:150 - Transforming data...
+2025-02-22 16:40:58.805 | SUCCESS  | __main__:cyclic_encoding:31 - Longitude cyclic encoding done !!!
+2025-02-22 16:40:59.489 | SUCCESS  | __main__:cyclic_encoding:35 - Hour cyclic encoding done !!!
+2025-02-22 16:41:00.167 | SUCCESS  | __main__:cyclic_encoding:39 - Day cyclic encoding done !!!
+2025-02-22 16:41:00.816 | SUCCESS  | __main__:cyclic_encoding:43 - Month cyclic encoding done !!!
+2025-02-22 16:41:01.391 | SUCCESS  | __main__:cyclic_encoding:69 - Wind direction cyclic encoding done !!!
+2025-02-22 16:41:02.376 | SUCCESS  | __main__:grouping_states:91 - State grouping done !!!
+2025-02-22 16:41:02.900 | SUCCESS  | __main__:grouping_weathers:133 - Weather grouping done !!!
+2025-02-22 16:41:02.900 | INFO     | __main__:transform_save:155 - Final dataset shape ----> || Lines: 4185414 || Features: 26
+2025-02-22 16:41:02.900 | INFO     | __main__:transform_save:156 - List of features ----> ['severity', 'start_lat', 'distance(mi)', 'timezone', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'accident_duration(min)', 'start_year', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle', 'state_group', 'weather_group']
+2025-02-22 16:41:05.825 | INFO     | __main__:transform_save:159 - Data saved to ----> C:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\data\processed\final\final_processed_data.parquet
+2025-02-22 16:41:05.826 | SUCCESS  | __main__:transform_save:161 - Feature engineering done !!!
+2025-02-25 01:11:28.315 | INFO     | __main__:transform_save:146 - Loading data...
+2025-02-25 01:11:32.903 | SUCCESS  | __main__:transform_save:148 - Data loaded !!!
+2025-02-25 01:11:32.904 | INFO     | __main__:transform_save:150 - Transforming data...
+2025-02-25 01:11:33.831 | SUCCESS  | __main__:cyclic_encoding:31 - Longitude cyclic encoding done !!!
+2025-02-25 01:11:34.593 | SUCCESS  | __main__:cyclic_encoding:35 - Hour cyclic encoding done !!!
+2025-02-25 01:11:35.339 | SUCCESS  | __main__:cyclic_encoding:39 - Day cyclic encoding done !!!
+2025-02-25 01:11:36.045 | SUCCESS  | __main__:cyclic_encoding:43 - Month cyclic encoding done !!!
+2025-02-25 01:11:36.667 | SUCCESS  | __main__:cyclic_encoding:69 - Wind direction cyclic encoding done !!!
+2025-02-25 01:11:37.715 | SUCCESS  | __main__:grouping_states:91 - State grouping done !!!
+2025-02-25 01:11:38.301 | SUCCESS  | __main__:grouping_weathers:133 - Weather grouping done !!!
+2025-02-25 01:11:38.302 | INFO     | __main__:transform_save:155 - Final dataset shape ----> || Lines: 4185414 || Features: 26
+2025-02-25 01:11:38.302 | INFO     | __main__:transform_save:156 - List of features ----> ['severity', 'start_lat', 'distance(mi)', 'timezone', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'accident_duration(min)', 'start_year', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle', 'state_group', 'weather_group']
+2025-02-25 01:11:41.354 | INFO     | __main__:transform_save:159 - Data saved to ----> C:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\data\processed\final\final_processed_data.parquet
+2025-02-25 01:11:41.354 | SUCCESS  | __main__:transform_save:161 - Feature engineering done !!!

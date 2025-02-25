@@ -22,4 +22,6 @@ catboost
 xgboost
 lightgbm
 pickle
+statsmodels
+openpyxl
 -e .

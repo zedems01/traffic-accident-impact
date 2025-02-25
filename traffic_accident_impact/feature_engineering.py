@@ -72,7 +72,7 @@ class FeatureEngineering:
     def grouping_states(self):
         urban_states = [
         'ny', 'nj', 'ma', 'ct', 'ri', 'pa', 'md', 'de', 'dc', 'fl', 'ca', 
-        'il', 'mi', 'oh', 'tx', 'ga', 'nc', 'va', 'wa', 'az', 'nv'
+        'il', 'mi', 'oh', 'tx', 'ga', 'nc', 'va', 'wa', 'az', 'nv', 'in'
     ]
         rural_states = [
         'me', 'nh', 'vt', 'wv', 'ky', 'tn', 'sc', 'al', 'ms', 'ar', 'la', 
