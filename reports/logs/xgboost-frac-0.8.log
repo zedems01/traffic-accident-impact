@@ -1,0 +1,14 @@
+2025-02-25 22:46:45.572 | SUCCESS  | __main__:train_save:273 - DATA LOADED AND SAMPLED !
+2025-02-25 22:46:45.573 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 22:46:46.741 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 22:46:46.752 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 22:46:46.753 | INFO     | __main__:randomized_searchCV:180 - Training XGBoost model...
+2025-02-25 23:02:41.574 | SUCCESS  | __main__:randomized_searchCV:194 - RANDOMIZED SEARCH CV FOR XGBoost MODEL DONE !
+2025-02-25 23:02:41.582 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 23:02:48.105 | INFO     | __main__:save_training_results:74 - XGBoost model,  frac=0.8,  Adjusted R² on the train set ----> 0.611
+2025-02-25 23:02:48.106 | INFO     | __main__:save_training_results:75 - XGBoost model,  frac=0.8,  Adjusted R² on the test set ----> 0.562
+2025-02-25 23:02:48.106 | INFO     | __main__:save_training_results:76 - XGBoost model,  frac=0.8,  RMSE on the train set ----> 23.443
+2025-02-25 23:02:48.107 | INFO     | __main__:save_training_results:77 - XGBoost model,  frac=0.8,  RMSE on the test set ----> 24.918
+2025-02-25 23:03:35.684 | INFO     | __main__:save_training_results:86 - Train set:  dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 23:03:35.684 | INFO     | __main__:save_training_results:87 - Test set:  dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 23:03:35.684 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !

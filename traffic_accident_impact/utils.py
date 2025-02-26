@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from scipy import stats
-from sklearn.metrics import root_mean_squared_error, r2_score
+from sklearn.metrics import r2_score
 from statsmodels.stats.stattools import durbin_watson
 import statsmodels.api as sm
 from pathlib import Path
@@ -116,5 +116,19 @@ def adjusted_r2_score(y_true, y_pred, n_features: int):
     r2 = r2_score(y_true, y_pred)
     n = len(y_true)
     return 1 - (1 - r2) * (n - 1) / (n - n_features - 1)
+
+
+
+def remove_outliers(df: pd.DataFrame, column_name: str):
+    Q1 = df[column_name].quantile(0.25)
+    Q3 = df[column_name].quantile(0.75)
+    IQR = Q3 - Q1
+    
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.0 * IQR
+    
+    df_cleaned = df[(df[column_name] >= lower_bound) & (df[column_name] <= upper_bound)].reset_index(drop=True)
+    
+    return df_cleaned
 
 

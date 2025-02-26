@@ -24,6 +24,7 @@ def encoding(df, column, period):
 class FeatureEngineering:
     def __init__(self, frame):
         self.df = frame.drop(columns=columns_to_drop, axis=1)
+        self.df = remove_outliers(self.df, 'accident_duration(min)')
 
     def cyclic_encoding(self):
         encoding(self.df, "start_lng", 360)

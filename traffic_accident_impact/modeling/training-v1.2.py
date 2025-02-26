@@ -1,7 +1,3 @@
-# ---- TRAINING phase 1  -----------------
-# -----------------------------------------
-
-
 import pandas as pd
 from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -224,7 +220,7 @@ def train_save(
     name = f'training-v1-{Trainer.best_model_name}-frac-{frac}.pkl'  
     output_file_path = MODELS_DIR / name
     pickle.dump(Trainer.best_model, open(output_file_path, 'wb'))
-    print(format_text(f"\nModel saved !!!\n"))
+    logger.success("Model saved !!!")
 
 
 if __name__ == '__main__':

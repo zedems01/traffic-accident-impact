@@ -1,0 +1,15 @@
+2025-02-25 22:07:21.460 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 22:07:21.461 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 22:07:21.565 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 22:07:21.568 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 22:07:21.569 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 22:07:21.576 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 22:07:24.897 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 22:07:25.266 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.1,  Adjusted R² on the train set ----> 0.269
+2025-02-25 22:07:25.266 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.1,  Adjusted R² on the test set ----> 0.273
+2025-02-25 22:07:25.266 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.1,  RMSE on the train set ----> 32.182
+2025-02-25 22:07:25.267 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.1,  RMSE on the test set ----> 32.141
+2025-02-25 22:07:36.949 | INFO     | __main__:save_training_results:86 - dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 22:07:36.949 | INFO     | __main__:save_training_results:87 - dw_stat = 2.01  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 22:07:36.950 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
+2025-02-25 22:07:36.950 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !

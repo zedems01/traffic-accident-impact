@@ -1,0 +1,175 @@
+2025-02-24 23:45:49.547 | SUCCESS  | __main__:train_save:266 - DATA LOADED AND SAMPLED !
+2025-02-24 23:45:49.547 | INFO     | __main__:data_preparation:34 - Starting data preparation...
+2025-02-24 23:45:49.552 | INFO     | __main__:data_preparation:40 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-24 23:45:49.553 | INFO     | __main__:data_preparation:42 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-24 23:45:49.554 | SUCCESS  | __main__:data_preparation:54 - Data preparation done !!!
+2025-02-24 23:47:37.569 | SUCCESS  | __main__:train_save:266 - DATA LOADED AND SAMPLED !
+2025-02-24 23:47:37.569 | INFO     | __main__:data_preparation:34 - Starting data preparation...
+2025-02-24 23:47:37.570 | INFO     | __main__:data_preparation:40 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-24 23:47:37.571 | INFO     | __main__:data_preparation:42 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-24 23:47:37.572 | SUCCESS  | __main__:data_preparation:54 - Data preparation done !!!
+2025-02-24 23:47:58.781 | SUCCESS  | __main__:train_save:266 - DATA LOADED AND SAMPLED !
+2025-02-24 23:47:58.781 | INFO     | __main__:data_preparation:34 - Starting data preparation...
+2025-02-24 23:47:58.783 | INFO     | __main__:data_preparation:40 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-24 23:47:58.784 | INFO     | __main__:data_preparation:42 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-24 23:47:58.785 | SUCCESS  | __main__:data_preparation:54 - Data preparation done !!!
+2025-02-24 23:47:58.785 | INFO     | __main__:randomized_searchCV:175 - Starting randomized search...
+2025-02-24 23:47:58.785 | INFO     | __main__:randomized_searchCV:177 - Training Linear model...
+2025-02-24 23:48:00.490 | INFO     | __main__:save_training_results:58 - Saving training results...
+2025-02-25 00:13:07.852 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 00:13:07.852 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 00:13:07.854 | INFO     | __main__:data_preparation:41 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-25 00:13:07.854 | INFO     | __main__:data_preparation:43 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-25 00:13:07.855 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 00:13:07.856 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 00:13:07.856 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 00:13:07.862 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 00:13:09.460 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1107 - UserWarning: One or more of the test scores are non-finite: [nan]
+2025-02-25 00:13:09.482 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 00:53:22.754 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 00:53:22.754 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 00:53:22.755 | INFO     | __main__:data_preparation:41 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-25 00:53:22.756 | INFO     | __main__:data_preparation:43 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-25 00:53:22.757 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 00:53:22.757 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 00:53:22.758 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 00:53:22.764 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 00:53:24.309 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1107 - UserWarning: One or more of the test scores are non-finite: [nan]
+2025-02-25 00:53:24.323 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 00:53:24.333 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.256
+2025-02-25 00:53:24.334 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.409
+2025-02-25 00:53:24.334 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 37.501
+2025-02-25 00:53:24.334 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 45.371
+2025-02-25 00:54:46.645 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 00:54:46.645 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 00:54:46.646 | INFO     | __main__:data_preparation:41 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-25 00:54:46.647 | INFO     | __main__:data_preparation:43 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-25 00:54:46.648 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 00:54:46.648 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 00:54:46.648 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 00:54:46.657 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 00:54:48.081 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1107 - UserWarning: One or more of the test scores are non-finite: [nan]
+2025-02-25 00:54:48.112 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 00:54:48.120 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.239
+2025-02-25 00:54:48.121 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.186
+2025-02-25 00:54:48.121 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 38.930
+2025-02-25 00:54:48.121 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 41.081
+2025-02-25 00:55:31.481 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 00:55:31.481 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 00:55:31.483 | INFO     | __main__:data_preparation:41 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-25 00:55:31.483 | INFO     | __main__:data_preparation:43 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-25 00:55:31.484 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 00:55:31.484 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 00:55:31.484 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 00:55:31.490 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 00:55:32.928 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1107 - UserWarning: One or more of the test scores are non-finite: [nan]
+2025-02-25 00:55:32.943 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 00:55:32.953 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.199
+2025-02-25 00:55:32.953 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.428
+2025-02-25 00:55:32.954 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 45.501
+2025-02-25 00:55:32.954 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 41.790
+2025-02-25 00:56:22.114 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 00:56:22.114 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 00:56:22.115 | INFO     | __main__:data_preparation:41 - NUMERICAL COLUMNS ARE: ['start_lat', 'distance(mi)', 'temperature(f)', 'humidity(%)', 'pressure(in)', 'wind_speed(mph)', 'precipitation(in)', 'description_pca1', 'description_pca2', 'description_pca3', 'sin_start_lng', 'cos_start_lng', 'sin_start_hour', 'cos_start_hour', 'sin_start_day', 'cos_start_day', 'sin_start_month', 'cos_start_month', 'sin_wind_angle', 'cos_wind_angle']
+2025-02-25 00:56:22.116 | INFO     | __main__:data_preparation:43 - CATEGORICAL COLUMNS ARE: ['severity', 'timezone', 'start_year', 'state_group', 'weather_group']
+2025-02-25 00:56:22.116 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 00:56:22.118 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 00:56:22.118 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 00:56:22.126 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 00:56:23.673 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1107 - UserWarning: One or more of the test scores are non-finite: [nan]
+2025-02-25 00:56:23.690 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 00:56:23.701 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.266
+2025-02-25 00:56:23.702 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.474
+2025-02-25 00:56:23.702 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 41.845
+2025-02-25 00:56:23.702 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 36.336
+2025-02-25 00:59:38.740 | INFO     | __main__:save_training_results:86 - dw_stat = 2.01  ----> The residuals appear random (no obvious autocorrelation).
+2025-02-25 00:59:38.740 | INFO     | __main__:save_training_results:87 - dw_stat = 1.90  ----> The residuals appear random (no obvious autocorrelation).
+2025-02-25 00:59:38.741 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
+2025-02-25 00:59:38.741 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !
+2025-02-25 01:12:12.102 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 01:12:12.102 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 01:12:12.104 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 01:12:12.105 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 01:12:12.105 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 01:12:12.113 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 01:12:13.558 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 01:12:13.566 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.177
+2025-02-25 01:12:13.566 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.023
+2025-02-25 01:12:13.566 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 40.312
+2025-02-25 01:12:13.566 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 42.440
+2025-02-25 01:12:23.857 | INFO     | __main__:save_training_results:86 - dw_stat = 2.05  ----> The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:12:23.857 | INFO     | __main__:save_training_results:87 - dw_stat = 1.53  ----> The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:12:23.857 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
+2025-02-25 01:12:23.857 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !
+2025-02-25 01:21:42.268 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 01:21:42.268 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 01:21:42.270 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 01:21:42.271 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 01:21:42.271 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 01:21:42.279 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 01:21:43.751 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 01:21:43.759 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.158
+2025-02-25 01:21:43.759 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.250
+2025-02-25 01:21:43.759 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 44.589
+2025-02-25 01:21:43.759 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 39.131
+2025-02-25 01:36:12.035 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 01:36:12.036 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 01:36:12.038 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 01:36:12.038 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 01:36:12.038 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 01:36:12.045 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 01:36:13.667 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 01:36:13.677 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.310
+2025-02-25 01:36:13.677 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.159
+2025-02-25 01:36:13.677 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 40.742
+2025-02-25 01:36:13.677 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 37.903
+2025-02-25 01:36:25.851 | INFO     | __main__:save_training_results:86 - dw_stat = 2.17  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:36:25.852 | INFO     | __main__:save_training_results:87 - dw_stat = 2.05  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:36:25.852 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
+2025-02-25 01:36:25.852 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !
+2025-02-25 01:37:45.967 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 01:37:45.967 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 01:37:45.970 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 01:37:45.970 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 01:37:45.971 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 01:37:45.977 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 01:37:47.676 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:1107 - UserWarning: One or more of the test scores are non-finite: [nan]
+2025-02-25 01:37:47.693 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 01:37:47.704 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.257
+2025-02-25 01:37:47.704 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.474
+2025-02-25 01:37:47.704 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 42.302
+2025-02-25 01:37:47.705 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 49.969
+2025-02-25 01:37:52.382 | INFO     | __main__:save_training_results:86 - dw_stat = 2.07  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:37:52.382 | INFO     | __main__:save_training_results:87 - dw_stat = 1.97  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:37:52.382 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
+2025-02-25 01:37:52.382 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !
+2025-02-25 01:38:44.223 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 01:38:44.224 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 01:38:44.226 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 01:38:44.227 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 01:38:44.227 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 01:38:44.235 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 01:38:45.759 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 01:38:45.769 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.210
+2025-02-25 01:38:45.769 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.468
+2025-02-25 01:38:45.769 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 45.960
+2025-02-25 01:38:45.770 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 49.668
+2025-02-25 01:38:49.887 | INFO     | __main__:save_training_results:86 - dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:38:49.887 | INFO     | __main__:save_training_results:87 - dw_stat = 2.19  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:38:49.887 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
+2025-02-25 01:38:49.887 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !
+2025-02-25 01:45:39.806 | SUCCESS  | __main__:train_save:272 - DATA LOADED AND SAMPLED !
+2025-02-25 01:45:39.807 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 01:45:39.809 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 01:45:39.810 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 01:45:39.810 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 01:45:39.822 | WARNING  | __main__:warning_handler:263 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 01:45:41.300 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 01:45:41.308 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.0001,  Adjusted R² on the train set ----> 0.248
+2025-02-25 01:45:41.308 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.0001,  Adjusted R² on the test set ----> -0.227
+2025-02-25 01:45:41.308 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.0001,  RMSE on the train set ----> 39.889
+2025-02-25 01:45:41.308 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.0001,  RMSE on the test set ----> 44.142
+2025-02-25 01:45:42.736 | INFO     | __main__:save_training_results:86 - dw_stat = 2.06  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 01:45:42.737 | INFO     | __main__:save_training_results:87 - dw_stat = 2.50  ---->  The residuals exhibit negative autocorrelation.
+2025-02-25 01:45:42.737 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
+2025-02-25 01:45:42.737 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !

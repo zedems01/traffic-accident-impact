@@ -13,3 +13,18 @@
 2025-02-25 01:42:13.775 | INFO     | __main__:save_training_results:87 - dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
 2025-02-25 01:42:13.776 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !
 2025-02-25 01:42:13.776 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !
+2025-02-25 22:09:56.434 | SUCCESS  | __main__:train_save:273 - DATA LOADED AND SAMPLED !
+2025-02-25 22:09:56.435 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 22:09:57.086 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 22:09:57.087 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 22:09:57.088 | INFO     | __main__:randomized_searchCV:180 - Training Linear model...
+2025-02-25 22:09:57.094 | WARNING  | __main__:warning_handler:264 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-02-25 22:10:09.039 | SUCCESS  | __main__:randomized_searchCV:194 - RANDOMIZED SEARCH CV FOR Linear MODEL DONE !
+2025-02-25 22:10:09.040 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 22:10:10.799 | INFO     | __main__:save_training_results:74 - Linear model,  frac=0.5,  Adjusted R² on the train set ----> 0.269
+2025-02-25 22:10:10.800 | INFO     | __main__:save_training_results:75 - Linear model,  frac=0.5,  Adjusted R² on the test set ----> 0.269
+2025-02-25 22:10:10.800 | INFO     | __main__:save_training_results:76 - Linear model,  frac=0.5,  RMSE on the train set ----> 32.130
+2025-02-25 22:10:10.800 | INFO     | __main__:save_training_results:77 - Linear model,  frac=0.5,  RMSE on the test set ----> 32.141
+2025-02-25 22:10:45.150 | INFO     | __main__:save_training_results:86 - dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 22:10:45.152 | INFO     | __main__:save_training_results:87 - dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 22:10:45.152 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !

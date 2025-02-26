@@ -1,0 +1,14 @@
+2025-02-25 23:28:37.030 | SUCCESS  | __main__:train_save:273 - DATA LOADED AND SAMPLED !
+2025-02-25 23:28:37.031 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-02-25 23:28:37.650 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-02-25 23:28:37.651 | INFO     | __main__:randomized_searchCV:178 - Starting randomized search...
+2025-02-25 23:28:37.652 | INFO     | __main__:randomized_searchCV:180 - Training CatBoost model...
+2025-02-25 23:54:01.821 | SUCCESS  | __main__:randomized_searchCV:194 - RANDOMIZED SEARCH CV FOR CatBoost MODEL DONE !
+2025-02-25 23:54:01.827 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-02-25 23:54:16.297 | INFO     | __main__:save_training_results:74 - CatBoost model,  frac=0.5,  Adjusted R² on the train set ----> 0.560
+2025-02-25 23:54:16.298 | INFO     | __main__:save_training_results:75 - CatBoost model,  frac=0.5,  Adjusted R² on the test set ----> 0.544
+2025-02-25 23:54:16.298 | INFO     | __main__:save_training_results:76 - CatBoost model,  frac=0.5,  RMSE on the train set ----> 24.936
+2025-02-25 23:54:16.298 | INFO     | __main__:save_training_results:77 - CatBoost model,  frac=0.5,  RMSE on the test set ----> 25.392
+2025-02-25 23:54:47.895 | INFO     | __main__:save_training_results:86 - Train set:  dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 23:54:47.895 | INFO     | __main__:save_training_results:87 - Test set:  dw_stat = 2.00  ---->  The residuals appear random (no obvious autocorrelation).
+2025-02-25 23:54:47.895 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !

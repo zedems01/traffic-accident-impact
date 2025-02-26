@@ -83,8 +83,8 @@ class ModelTraining:
         # residual analysis
         resid_train = get_residuals(self.y_train, y_pred_train, output_path_frac / 'train_residuals.png')
         resid_test = get_residuals(self.y_test, y_pred_test, output_path_frac / 'test_residuals.png')
-        logger.info(resid_train)
-        logger.info(resid_test)
+        logger.info(f"Train set:  {resid_train}")
+        logger.info(f"Test set:  {resid_test}")
 
         logger.success(f"RESULT SAVED !")
 
@@ -169,12 +169,10 @@ class ModelTraining:
         model = models[selected_model_name]
         params = param_distributions[selected_model_name]
         output_path_model = MODELS_DIR / f"{selected_model_name}"
-        # output_path_model.mkdir(parents=True, exist_ok=True)
         output_path_frac = output_path_model / f"frac-{self.frac}"
         output_path_frac.mkdir(parents=True, exist_ok=True)
 
-        # self.best_r2 = float('-inf')
-        # self.results_train = {}
+
         logger.info("Starting randomized search...")
 
         logger.info(f"Training {selected_model_name} model...")
@@ -191,47 +189,11 @@ class ModelTraining:
             scoring=scoring,
         )
         random_search.fit(self.X_train, self.y_train)
+        logger.success(f"RANDOMIZED SEARCH CV FOR {selected_model_name} MODEL DONE !")
 
         self.save_training_results(random_search, selected_model_name, output_path_frac)
 
-        logger.success(f"RANDOMIZED SEARCH CV FOR {selected_model_name} MODEL DONE !")
-
-        # best_model = random_search.best_estimator_
-        # best_params = random_search.best_params_
-        # mse = -random_search.best_score_
-        # val_r2_adjusted = adjusted_r2_score(self.y_val, y_preds, self.X_val.shape[1])
-        # logger.info(f"MSE ----> {mse:.3f}")
-        # logger.info(f"Adjusted R² ----> {val_r2_adjusted:.3f}")
-        # self.results_train[selected_model_name] = {
-        #     'best_model': best_model,
-        #     'best_params': best_params,
-        #     'mse': mse,
-        #     'adj_r2': val_r2_adjusted  
-        # }
-        # if val_r2_adjusted > self.best_r2:
-        #     self.best_r2 = val_r2_adjusted
-        #     self.best_model = best_model
-        #     self.best_params = best_params
-        #     self.best_model_name = selected_model_name
-
-        # logger.success("Randomized search CV done !")
-        # logger.info(f"Best model from randomized search CV ----> {self.best_model_name}\
-        #             \nBest Adjusted R² from randomized search CV ----> {self.best_r2:.3f}\n")
-
-    # def train_best_model(self):
-    #     n_features_test = self.X_test.shape[1]
-    #     X_combined = pd.concat([self.X_train, self.X_val])
-    #     y_combined = pd.concat([self.y_train, self.y_val])
-
-    #     logger.info("Training the best model...")
-    #     self.best_model.fit(X_combined, y_combined)
-    #     logger.success("Best model training done !!!")
-
-    #     self.test_r2 = adjusted_r2_score(self.y_test, self.best_model.predict(self.X_test), n_features_test)
-
-    #     logger.info(f"Best model's Adjusted R² on the test set ----> {self.test_r2:.3f}\n")
-
-
+        
 
 
 

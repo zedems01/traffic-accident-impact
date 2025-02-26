@@ -1,9 +1,3 @@
-# ---- REPLACE DEFAULT PATHS AS APPROPRIATE ----
-#
-#
-# -----------------------------------------
-
-
 import re
 import string
 import numpy as np
