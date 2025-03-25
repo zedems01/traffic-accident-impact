@@ -1,0 +1,15 @@
+2025-03-10 01:57:24.349 | SUCCESS  | __main__:train_save:239 - DATA LOADED AND SAMPLED !
+2025-03-10 01:57:24.350 | INFO     | __main__:data_preparation:35 - Starting data preparation...
+2025-03-10 01:57:24.461 | SUCCESS  | __main__:data_preparation:55 - Data preparation done !!!
+2025-03-10 01:57:24.463 | INFO     | __main__:randomized_searchCV:181 - Starting randomized search...
+2025-03-10 01:57:24.463 | INFO     | __main__:randomized_searchCV:183 - Training RandomForest model...
+2025-03-10 01:57:24.471 | WARNING  | __main__:warning_handler:230 - c:\Users\Achille Nguessie\Desktop\Projects\2024\traffic-accident-impact\.venv\Lib\site-packages\sklearn\model_selection\_search.py:317 - UserWarning: The total space of parameters 1 is smaller than n_iter=20. Running 1 iterations. For exhaustive searches, use GridSearchCV.
+2025-03-10 02:15:18.633 | SUCCESS  | __main__:randomized_searchCV:197 - RANDOMIZED SEARCH CV FOR RandomForest MODEL DONE !
+2025-03-10 02:15:18.634 | INFO     | __main__:save_training_results:59 - Saving training results...
+2025-03-10 02:15:34.803 | INFO     | __main__:save_training_results:74 - RandomForest model,  frac=0.1,  Adjusted R² on the train set ----> 0.934
+2025-03-10 02:15:34.803 | INFO     | __main__:save_training_results:75 - RandomForest model,  frac=0.1,  Adjusted R² on the test set ----> 0.529
+2025-03-10 02:15:34.804 | INFO     | __main__:save_training_results:76 - RandomForest model,  frac=0.1,  RMSE on the train set ----> 9.655
+2025-03-10 02:15:34.804 | INFO     | __main__:save_training_results:77 - RandomForest model,  frac=0.1,  RMSE on the test set ----> 25.801
+2025-03-10 02:15:42.576 | INFO     | __main__:save_training_results:86 - Train set:  dw_stat = 1.99  ---->  The residuals appear random (no obvious autocorrelation).
+2025-03-10 02:15:42.576 | INFO     | __main__:save_training_results:87 - Test set:  dw_stat = 2.01  ---->  The residuals appear random (no obvious autocorrelation).
+2025-03-10 02:15:42.576 | SUCCESS  | __main__:save_training_results:89 - RESULT SAVED !

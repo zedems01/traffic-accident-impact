@@ -1,7 +1,9 @@
 # Data
-/data/
-/draft-folder/
-/traffic_accident_impact/modeling/catboost_info/
+src/data/
+src/draft-folder/
+src/traffic_accident_impact/modeling/catboost_info/
+*.tex
+src/models/RandomForest/
 # Mac OS-specific storage files
 .DS_Store
 
@@ -82,7 +84,7 @@ instance/
 .scrapy
 
 # MkDocs documentation
-docs/site/
+src/docs/site/
 
 # PyBuilder
 .pybuilder/

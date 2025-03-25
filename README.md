@@ -37,29 +37,6 @@ The project is organized into the following phases, each with corresponding scri
 
 5. **Results Analysis**
 
-<!-- ### Directory Structure
-
-```
-traffic_accident_impact/
-├── config.py              # Configuration file with paths (e.g., PROCESSED_DATA_DIR, MODELS_DIR)
-├── processing_spark.py    # PySpark preprocessing script
-├── text_preprocessing.py  # Doc2Vec text processing script
-├── feature_engineering.py # Feature engineering script
-├── model_training.py      # Model training script
-├── utils.py               # Utility functions for metrics and visualizations
-├── processed_data/        # Directory for processed datasets
-├── models/                # Directory for saved models
-├── reports/               # Directory for metrics and plots
-├── logs/                  # Directory for log files
-└── README.md              # This file
-``` -->
-
-
-
-
-
-
-
 
 
 ## Project Organization
