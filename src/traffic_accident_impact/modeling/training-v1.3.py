@@ -49,7 +49,6 @@ class ModelTraining:
             ])
 
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.2)              # X_test = 20%
-        # self.X_train, self.X_val, self.y_train, self.y_val = train_test_split(X_temp, y_temp, test_size=0.25)   # X_train = 60%, X_val = 20%
     
 
         logger.success(f"Data preparation done !!!")
@@ -132,14 +131,8 @@ class ModelTraining:
             'Linear': {},
             'RandomForest': {
                 'model__n_estimators': [100],
-                # 'model__max_depth': [10, 20, 30],
                 'model__min_samples_split': [2],
             },
-            # 'RandomForest': {
-            #     'model__n_estimators': [100, 200, 300],
-            #     'model__max_depth': [10, 20, 30],
-            #     'model__min_samples_split': [2, 5, 10],
-            # },
             'CatBoost': {
                 'model__iterations': [100, 200, 500],
                 'model__learning_rate': [0.01, 0.05, 0.1],
@@ -242,20 +235,6 @@ def train_save(
 
     Trainer.data_preparation()
     Trainer.randomized_searchCV(model_name=model_name, nb_cv=5)
-    # Trainer.train_best_model()
-
-    # name = f'training-v1-{Trainer.best_model_name}-frac-{frac}.pkl'  
-    # output_file_path = MODELS_DIR / name
-    # pickle.dump(Trainer.best_model, open(output_file_path, 'wb'))
-    # logger.success("Model saved !")
-
 
 if __name__ == '__main__':
-    # parser = argparse.ArgumentParser(description="Training models and saving the best model")
-    # parser.add_argument('--parquet_file_path', '-p', type=str, help='Path to the parquet file from the preprocessing tasks')
-    # parser.add_argument('--output_file_name', '-o', type=str, help='Name of the output file')
-    # parser.add_argument('--cv_method', '-v', type=str, help="Cross-validation method grid_searchCV: grid or randomized_searchCV: random")
-    # args = parser.parse_args()
-    # train_save(args.parquet_file_path, args.output_file_name, args.cv_method)
-    # typer.run(train_save)
     app()
