@@ -48,7 +48,7 @@ class ModelTraining:
                 ('cat', OneHotEncoder(drop='first', handle_unknown='error'), self.categorical_cols)
             ])
 
-        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.2)              # X_test = 20%
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.2)              
     
 
         logger.success(f"Data preparation done !!!")
