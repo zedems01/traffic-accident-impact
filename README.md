@@ -42,7 +42,7 @@ The final report of the project can be found [here](./src/reports/report.pdf)
 
 ## Project Organization
 
-traffic_accident_impact/
+traffic_accident_impact/      
 ├── src/                                    
 │   ├── models/                             
 │   │   ├── LightGBM/                       
