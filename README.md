@@ -53,7 +53,7 @@ traffic_accident_impact/
 │   │   ├── figures/                        
 │   │   └── logs/                           
 │   ├── modeling/                            
-│   │   ├── __init__.py                     
+│   │   ├── init.py                     
 │   │   ├── config.py                       
 │   │   ├── feature_engineering.py          
 │   │   ├── processing_pandas.py             
