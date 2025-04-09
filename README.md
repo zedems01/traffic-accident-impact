@@ -63,7 +63,6 @@ traffic_accident_impact/
 │   └── .gitkeep
 ├── tests/                                   
 ├── .gitignore  
-├── .pdm-python  
 ├── LICENSE  
 ├── README.md  
 ├── pdm.lock                                
