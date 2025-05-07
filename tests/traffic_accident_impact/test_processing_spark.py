@@ -4,7 +4,7 @@ from pyspark.sql.types import StructType, StructField, StringType, IntegerType, 
 from unittest.mock import patch, MagicMock
 import pandas as pd
 
-from traffic_accident_impact.processing_spark import Preprocessing, upload_to_s3
+from src.traffic_accident_impact.processing_spark import Preprocessing, upload_to_s3
 
 @pytest.fixture
 def sample_spark_df(spark_session: SparkSession):
@@ -191,18 +191,6 @@ def test_time_processing(spark_session: SparkSession):
 def test_get_whiskers(preprocessor_for_outliers: Preprocessing):
     preprocessor = preprocessor_for_outliers
     # Manually calculate expected whiskers for 'distance_mi' using the Preprocessing class's logic (1.5 IQR)
-    # Data for distance_mi: [1.0, 0.5, 100.0, 1.2, 0.8, 1.1, 0.7, 200.0]
-    # Sorted: [0.5, 0.7, 0.8, 1.0, 1.1, 1.2, 100.0, 200.0]
-    # ApproxQuantile in Spark might give slightly different results than exact pandas.quantile
-    # For simplicity, we'll test if the structure is right and values are plausible.
-    # Let's use pandas to estimate for this test logic, acknowledging Spark might differ slightly.
-    # df_pd_dist = pd.Series([1.0, 0.5, 100.0, 1.2, 0.8, 1.1, 0.7, 200.0])
-    # q1_pd_dist = df_pd_dist.quantile(0.25) # 0.775
-    # q3_pd_dist = df_pd_dist.quantile(0.75) # 75.3
-    # iqr_pd_dist = q3_pd_dist - q1_pd_dist # 74.525
-    # lower_pd_dist = q1_pd_dist - 1.5 * iqr_pd_dist # 0.775 - 1.5 * 74.525 = -111.0125
-    # upper_pd_dist = q3_pd_dist + 1.5 * iqr_pd_dist # 75.3 + 1.5 * 74.525 = 187.0875
-
     whiskers = preprocessor.get_whiskers()
     
     assert 'distance_mi' in whiskers
@@ -212,29 +200,9 @@ def test_get_whiskers(preprocessor_for_outliers: Preprocessing):
     assert isinstance(whiskers['distance_mi'][0], float) # Lower bound
     assert isinstance(whiskers['distance_mi'][1], float) # Upper bound
 
-    # Example: For distance_mi [0.5, 0.7, 0.8, 1.0, 1.1, 1.2, 100.0, 200.0]
-    # Spark approxQuantile([0.5, 0.7, 0.8, 1.0, 1.1, 1.2, 100.0, 200.0], [0.25, 0.75], 0.01) might be:
-    # Q1 approx 0.7, Q3 approx 1.2 (if it only considers the small values due to large gap)
-    # This shows the sensitivity of approxQuantile. 
-    # The important part is that the function runs and returns the expected structure.
-    # A more robust test would be to mock approxQuantile if precise values are needed, 
-    # or test with a distribution where approxQuantile is more stable.
-    
-    # Let's test with a more stable column, e.g., 'pressure_in'
-    # pressure_in: [29.0, 29.1, 29.2, 29.3, 29.05, 29.15, 29.25, 35.0]
-    # Sorted: [29.0, 29.05, 29.1, 29.15, 29.2, 29.25, 29.3, 35.0]
-    # Pandas: Q1=29.0875, Q3=29.2625, IQR=0.175
-    # Lower = 29.0875 - 1.5 * 0.175 = 28.825
-    # Upper = 29.2625 + 1.5 * 0.175 = 29.525
-    
-    # We expect Spark's approxQuantile to be close to these for 'pressure_in'
-    # For this test, we mostly care about the function not crashing and returning the dict.
-    # Exact value assertion for approxQuantile is tricky without mocking it.
     lb_pressure, ub_pressure = whiskers['pressure_in']
     assert lb_pressure < ub_pressure
-    # Based on pandas calculation, 35.0 should be an outlier, so ub_pressure should be < 35.0
-    # And lb_pressure should be around 28.825
-    # These are just sanity checks, not exact value tests due to approxQuantile
+    
     assert ub_pressure < 30.0 # Expecting something around 29.525
     assert lb_pressure > 28.0 # Expecting something around 28.825
 
@@ -242,19 +210,12 @@ def test_get_whiskers_column_not_in_df(spark_session: SparkSession):
     df = spark_session.createDataFrame([Row(a=1)], StructType([StructField("a", IntegerType())]))
     preprocessor = Preprocessing(df, outlier_column_list=['b'])
     whiskers = preprocessor.get_whiskers()
-    assert 'b' not in whiskers # 'b' should be skipped as it's not in df
-    assert not whiskers # The whiskers dict should be empty
+    assert 'b' not in whiskers
+    assert not whiskers
 
 def test_remove_outliers(preprocessor_for_outliers: Preprocessing):
     preprocessor = preprocessor_for_outliers
     # Original count: 8 rows
-    # distance_mi outliers (using pandas estimated bounds for this test logic): 100.0, 200.0
-    #   lower_pd_dist = -111.0125, upper_pd_dist = 187.0875. Rows with 100.0 (id=3) is NOT an outlier by this.
-    #   This highlights the challenge. Let's use the 'pressure_in' bounds we estimated:
-    #   lb_pressure approx 28.825, ub_pressure approx 29.525
-    #   Outliers for pressure_in: 35.0 (id=8)
-    # temperature_f outliers: 1000.0 (id=4), 400.0 (id=7), 500.0 (id=8)
-
     # For simplicity in testing remove_outliers, let's mock get_whiskers to return fixed bounds
     # This makes the test deterministic and independent of approxQuantile variations.
     fixed_whiskers = {
@@ -265,8 +226,6 @@ def test_remove_outliers(preprocessor_for_outliers: Preprocessing):
     
     with patch.object(preprocessor, 'get_whiskers', return_value=fixed_whiskers) as mock_get_whiskers:
         preprocessor.remove_outliers(fixed_whiskers) # Pass fixed_whiskers also to the method per its signature
-        # If remove_outliers internally calls self.get_whiskers(), the mock is enough.
-        # The current code for remove_outliers takes `whiskers` as an argument.
 
     result_df = preprocessor.df
     remaining_ids = sorted([row.id for row in result_df.select("id").collect()])
@@ -290,17 +249,45 @@ def test_remove_outliers_no_outlier_columns_specified(spark_session: SparkSessio
     preprocessor = Preprocessing(df.copy(), outlier_column_list=[]) # No outlier columns
     initial_count = preprocessor.df.count()
     
-    # Call get_whiskers (will be empty) and remove_outliers
+    # Call get_whiskers and remove_outliers
     whiskers = preprocessor.get_whiskers()
     preprocessor.remove_outliers(whiskers)
     
-    assert preprocessor.df.count() == initial_count # No change if no outlier columns
+    assert preprocessor.df.count() == initial_count 
 
-# Placeholder for more tests for Preprocessing class
-# test_fill_columns
-# test_get_whiskers
-# test_remove_outliers
-# test_time_processing
+def test_remove_outliers_uses_internal_whiskers(preprocessor_for_outliers: Preprocessing):
+    preprocessor = preprocessor_for_outliers # This fixture has df and outlier_column_list set
+    # Original count for preprocessor_for_outliers df is 8 rows
+    
+    fixed_whiskers_internal = {
+        'distance_mi': [-10.0, 50.0],  # Same as other test: Will make 100.0 (id=3) and 200.0 (id=8) outliers
+        'temperature_f': [0.0, 100.0], # Same as other test: Will make 1000.0 (id=4), 400.0 (id=7), 500.0 (id=8) outliers
+        'pressure_in': [28.0, 30.0]    # Same as other test: Will make 35.0 (id=8) an outlier
+    }
+    
+    # Mock get_whiskers to ensure it's called and to control its output
+    with patch.object(preprocessor, 'get_whiskers', return_value=fixed_whiskers_internal) as mock_get_whiskers_method:
+        preprocessor.remove_outliers() # Call without arguments
+
+    mock_get_whiskers_method.assert_called_once() # Verify self.get_whiskers() was called
+
+    result_df = preprocessor.df
+    remaining_ids = sorted([row.id for row in result_df.select("id").collect()])
+    
+    # Expected to remain (based on fixed_whiskers_internal values):
+    # Row(id="1", distance_mi=1.0, temperature_f=50.0, pressure_in=29.0) -> Keep
+    # Row(id="2", distance_mi=0.5, temperature_f=55.0, pressure_in=29.1) -> Keep
+    # Row(id="3", distance_mi=100.0, ...) -> distance_mi outlier -> Remove
+    # Row(id="4", ..., temperature_f=1000.0, ...) -> temperature_f outlier -> Remove
+    # Row(id="5", distance_mi=0.8, temperature_f=52.0, pressure_in=29.05) -> Keep
+    # Row(id="6", distance_mi=1.1, temperature_f=58.0, pressure_in=29.15) -> Keep
+    # Row(id="7", ..., temperature_f=400.0, ...) -> temperature_f outlier -> Remove
+    # Row(id="8", distance_mi=200.0, temperature_f=500.0, pressure_in=35.0) -> All outlier -> Remove
+
+    expected_remaining_ids = sorted(["1", "2", "5", "6"])
+    assert remaining_ids == expected_remaining_ids
+    assert result_df.count() == len(expected_remaining_ids)
+
 
 # --- Tests for upload_to_s3 --- 
 @patch('traffic_accident_impact.processing_spark.boto3.client')
@@ -320,5 +307,3 @@ def test_upload_to_s3(mock_boto_client, tmp_path):
         "my-test-bucket", 
         "logs/preprocessing.log"
     )
-
-# Placeholder for transform_data tests (likely more integration-focused) 

@@ -3,11 +3,7 @@ import pandas as pd
 import numpy as np
 from unittest.mock import patch, MagicMock
 
-# Supposons que votre projet est structuré de manière à ce que vous puissiez importer utils comme ceci:
-# Si ce n'est pas le cas, ajustez le chemin d'importation.
-# Il est courant d'avoir un __init__.py dans le dossier tests et d'ajouter src au PYTHONPATH
-# ou d'installer le projet en mode éditable (pdm install -e .)
-from traffic_accident_impact import utils # Ajustez si nécessaire, ex: from src.traffic_accident_impact import utils
+from src.traffic_accident_impact import utils
 
 # --- Tests for remove_outliers ---
 
@@ -22,8 +18,8 @@ def test_remove_outliers_no_outliers():
     assert cleaned_df.shape[0] == df.shape[0], "Should not remove rows if no outliers according to the 1.0*IQR upper rule"
 
 def test_remove_outliers_with_upper_outliers():
-    # Note: utils.remove_outliers uses Q3 + 1.0 * IQR for upper bound
-    data = {'value': [10, 12, 11, 13, 10, 14, 12, 11, 13, 20, 22]} # 20, 22 are outliers
+    # utils.remove_outliers uses Q3 + 1.0 * IQR for upper bound
+    data = {'value': [10, 12, 11, 13, 10, 14, 12, 11, 13, 20, 22]}
     df = pd.DataFrame(data)
     # Q1 = 11.0, Q3 = 13.5, IQR = 2.5
     # Lower bound = 11.0 - 1.5 * 2.5 = 7.25
@@ -35,7 +31,7 @@ def test_remove_outliers_with_upper_outliers():
     assert 22 not in cleaned_df['value'].values
 
 def test_remove_outliers_with_lower_outliers():
-    data = {'value': [1, 2, 10, 12, 11, 13, 10, 14, 12, 11, 13]} # 1, 2 are outliers
+    data = {'value': [1, 2, 10, 12, 11, 13, 10, 14, 12, 11, 13]}
     df = pd.DataFrame(data)
     # Q1 = 10.0, Q3 = 12.5, IQR = 2.5
     # Lower bound = 10.0 - 1.5 * 2.5 = 6.25
@@ -71,14 +67,12 @@ def test_adjusted_r2_score_no_fit():
     y_pred = np.array([5, 4, 3, 2, 1]) # Example of a poor fit
     n_features = 1
     # R2 will be < 0 for this case.
-    # Let's calculate R2 manually:
-    # SS_tot = sum((y_true - y_true.mean())^2) = ((1-3)^2 + (2-3)^2 + (3-3)^2 + (4-3)^2 + (5-3)^2) = 4+1+0+1+4 = 10
-    # SS_res = sum((y_true - y_pred)^2) = ((1-5)^2 + (2-4)^2 + (3-3)^2 + (4-2)^2 + (5-1)^2) = 16+4+0+4+16 = 40
-    # R2 = 1 - SS_res / SS_tot = 1 - 40/10 = 1 - 4 = -3.0
+    # SS_tot = sum((y_true - y_true.mean())^2)
+    # SS_res = sum((y_true - y_pred)^2)
+    # R2 = 1 - SS_res / SS_tot = -3.0
     # n = 5, p = 1
     # Adj R2 = 1 - (1 - R2) * (n - 1) / (n - p - 1)
-    # Adj R2 = 1 - (1 - (-3.0)) * (5 - 1) / (5 - 1 - 1)
-    # Adj R2 = 1 - (4) * 4 / 3 = 1 - 16/3 = 1 - 5.333... = -4.333...
+    # Adj R2 = -4.333...
     adj_r2 = utils.adjusted_r2_score(y_true, y_pred, n_features)
     assert pytest.approx(adj_r2) == 1 - (1 - (-3.0)) * (5 - 1) / (5 - 1 - 1)
 
@@ -88,30 +82,22 @@ def test_adjusted_r2_score_less_features():
     # R2 = 0.5, n=10, p2=5
     # adj_r2_2 = 1 - (1-0.5)*(10-1)/(10-5-1) = 1 - 0.5 * 9 / 4 = 1 - 4.5/4 = 1 - 1.125 = -0.125
     # For the same R2, more features should result in a lower or more penalized adjusted R2
+    y_true = np.array([-2, -1, 0, 1, 2, -2, -1, 0, 1, 2]) # mean=0, SS_tot = 20
+    # This y_pred is used in the calls below; its actual R2 score is irrelevant due to the mock.
+    y_pred = y_true - np.array([1,1,1,1,1, -1,-1,-1,-1,-1]) 
     
-    # We need to construct y_true, y_pred that give R2 = 0.5
-    # Let y_true.mean() = 0. SS_tot = sum(y_true^2)
-    # R2 = 1 - SS_res / SS_tot => 0.5 = 1 - SS_res / SS_tot => SS_res / SS_tot = 0.5 => SS_res = 0.5 * SS_tot
-    y_true = np.array([-2, -1, 0, 1, 2, -2, -1, 0, 1, 2]) # mean=0, SS_tot = 4+1+0+1+4+4+1+0+1+4 = 20
-    # We need SS_res = 10
-    # Example: y_pred where sum((y_true-y_pred)^2) = 10
-    y_pred = y_true - np.array([1,1,1,1,1, -1,-1,-1,-1,-1]) # sum of squares of residuals = 1*5 + (-1)^2*5 = 10
-                                                          # ([-3,-2,-1,0,1, -1,0,1,2,3]) - Not this one
-                                                          # residuals = [-1,-1,-1,-1,-1, 1,1,1,1,1], sum(res^2)=10
-    # Let's verify R2 with sklearn directly
-    from sklearn.metrics import r2_score
-    r2 = r2_score(y_true, np.array([-1,0,1,2,1, -3,-2,-1,0,1])) # Found a y_pred that gives ~0.5 R2
-    # For simplicity, let's use a known R2 value and check adjustment.
-    # If r2 = 0.5, n=10, n_features=2
-    # adj_r2 = 1 - (1 - 0.5) * (10 - 1) / (10 - 2 - 1) = 1 - 0.5 * 9 / 7 = 1 - 4.5/7 approx 0.3571
+    # Expected calculation for adj_r2 given R2=0.5, n=10, features=2:
+    # adj_r2 = 1 - (1 - 0.5) * (10 - 1) / (10 - 2 - 1) approx 0.3571
+    # Expected for features=5:
+    # adj_r2 = 1 - (1 - 0.5) * (10 - 1) / (10 - 5 - 1) = -0.125
     
     # Mock r2_score to control R2 value directly for testing the adjustment logic
     with patch('traffic_accident_impact.utils.r2_score') as mock_r2:
         mock_r2.return_value = 0.5
-        adj_r2_f2 = utils.adjusted_r2_score(y_true, y_pred, n_features=2) # n=10
+        adj_r2_f2 = utils.adjusted_r2_score(y_true, y_pred, n_features=2)
         assert pytest.approx(adj_r2_f2) == 1 - (1 - 0.5) * (10 - 1) / (10 - 2 - 1)
 
-        adj_r2_f5 = utils.adjusted_r2_score(y_true, y_pred, n_features=5) # n=10
+        adj_r2_f5 = utils.adjusted_r2_score(y_true, y_pred, n_features=5)
         assert pytest.approx(adj_r2_f5) == 1 - (1 - 0.5) * (10 - 1) / (10 - 5 - 1)
         assert adj_r2_f5 < adj_r2_f2
 
@@ -141,7 +127,6 @@ def test_get_feature_importance_linear_model(mock_ols, mock_to_excel, tmp_path):
     # Mocking the pipeline and its components
     mock_model = MagicMock()
     # mock_model.coef_ = np.array([0.5, -0.3]) # Not directly used, params come from OLS
-
     mock_preprocessor = MagicMock()
     mock_preprocessor.get_feature_names_out.return_value = ['feature_A', 'feature_B']
     mock_preprocessor.transform.return_value = np.array([[1,2],[3,4],[5,6]]) # Transformed X data
@@ -169,33 +154,10 @@ def test_get_feature_importance_linear_model(mock_ols, mock_to_excel, tmp_path):
     assert mock_to_excel.call_count == 1
     call_args, _ = mock_to_excel.call_args
     excel_path = call_args[0]
-    df_importance = mock_to_excel.call_args.args[1] # Accessing via .args is more robust if it's a positional arg
-    if isinstance(df_importance, pd.DataFrame):
-        df_output = df_importance
-    else: # if it's a keyword argument 'df' or similar in a real scenario
-        df_output = mock_to_excel.call_args.kwargs['df'] 
-        # In this mocked scenario, pandas.DataFrame.to_excel is called on an instance,
-        # so the first argument to the mocked method is the DataFrame itself.
-        # So the path is args[0] and the DataFrame is the instance it's called on.
-        # This means my initial mock_to_excel.call_args.args[1] was wrong.
-        # The DataFrame is the `self` in `df.to_excel(path)`
-        # For a direct mock of `pd.DataFrame.to_excel`, the args list [path, **kwargs]
-        # Let's assume to_excel is called on an instance. df_output is that instance.
-        # No, the mock is on `pd.DataFrame.to_excel` itself. So the instance is the first arg.
-        # It seems the way I'm trying to get df_importance is tricky with instance method mocks.
-        # The easiest is to check the path and if the columns are what we expect.
+    df_importance = mock_to_excel.call_args.args[1]
 
     assert excel_path == output_dir / "feature_importance.xlsx"
-    # Minimal check on DataFrame content based on known feature names and expected columns
-    # This part can be tricky if the DataFrame is not directly passed as an argument to the mock
-    # For instance method mocks, the instance itself is `call_args.args[0]` if it's `instance.method(arg1, arg2)`
-    # but to_excel is `df.to_excel(path, index=...)`. So path is arg0 for the method.
-    # The DataFrame instance is available in the mock object if needed, but let's check call_args.
-    # The DataFrame being saved is actually the `self` of the `to_excel` method.
-    # To correctly get the DataFrame passed to `to_excel`:
-    # We would need to inspect the mock object itself or how it was called.
-    # A simpler check for now:
-    saved_df_arg = mock_to_excel.call_args.args[0] # This is the DataFrame instance
+    saved_df_arg = mock_to_excel.call_args.args[0] 
     assert isinstance(saved_df_arg, pd.DataFrame)
     assert list(saved_df_arg.columns) == ['Feature', 'Importance-Coeff', 'p-value']
     assert len(saved_df_arg) == 2 # Two features
@@ -222,8 +184,8 @@ def test_get_feature_importance_tree_model(mock_to_excel, tmp_path):
     utils.get_feature_importance(mock_pipeline, 'RandomForest', output_dir, x_train_dummy, y_train_dummy)
     
     mock_to_excel.assert_called_once()
-    saved_df_arg = mock_to_excel.call_args.args[0] # DataFrame instance
-    excel_path_arg = mock_to_excel.call_args.args[1] # Path argument to to_excel
+    saved_df_arg = mock_to_excel.call_args.args[0]
+    excel_path_arg = mock_to_excel.call_args.args[1]
 
     assert excel_path_arg == output_dir / "feature_importance.xlsx"
     assert isinstance(saved_df_arg, pd.DataFrame)
@@ -269,6 +231,3 @@ def test_get_residuals(mock_probplot, mock_durbin_watson, mock_close, mock_show,
     assert mock_show.call_count == 0 # Original function does not call plt.show() for get_residuals
     assert mock_close.call_count == 3
     assert mock_probplot.call_count == 3
-
-# --- Placeholder for other utils tests ---
-# Will add tests for plot_box, get_feature_importance, get_residuals later 

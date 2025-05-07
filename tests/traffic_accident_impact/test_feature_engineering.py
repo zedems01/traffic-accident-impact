@@ -4,7 +4,7 @@ import numpy as np
 from unittest.mock import patch, MagicMock
 from typer.testing import CliRunner
 
-from traffic_accident_impact.feature_engineering import FeatureEngineering, encoding, app as feature_engineering_app
+from src.traffic_accident_impact.feature_engineering import FeatureEngineering, encoding, app as feature_engineering_app
 
 
 @pytest.fixture
