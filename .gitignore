@@ -4,6 +4,7 @@ src/draft-folder/
 src/traffic_accident_impact/modeling/catboost_info/
 *.tex
 src/models/RandomForest/
+*_copy.ipynb
 # Mac OS-specific storage files
 .DS_Store
 
